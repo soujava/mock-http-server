@@ -1,66 +1,69 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.kristofa</groupId>
-	<artifactId>mock-http-server</artifactId>
-	<version>4.2-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>Mock and Proxy Http Server</name>
-	<description>Mock and Proxy HTTP Server for testing purposes. Forked from https://github.com/jharlap/mock-http-server</description>
-	<url>https://github.com/kristofa/mock-http-server</url>
-	<licenses>
-		<license>
-			<name>Apache 2</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-	<scm>
-    <connection>scm:git:git@github.com:kristofa/mock-http-server.git</connection>
-    <url>git@github.com:kristofa/mock-http-server.git</url>
-    <developerConnection>scm:git:git@github.com:kristofa/mock-http-server.git</developerConnection>
-  </scm>
-  <developers>
-    <developer>
-      <id>kristofa</id>
-      <name>Kristof Adriaenssens</name>
-      <email>kr_adr@yahoo.co.uk</email>
-    </developer>
-  </developers>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-		
-	<dependencies>
-		<dependency>
-			<groupId>org.simpleframework</groupId>
-			<artifactId>simple</artifactId>
-			<version>4.1.21</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.1</version>
-		</dependency>
-		<dependency>
-          <groupId>org.apache.commons</groupId>
-          <artifactId>commons-lang3</artifactId>
-          <version>3.1</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.kristofa</groupId>
+    <artifactId>mock-http-server</artifactId>
+    <version>4.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Mock and Proxy Http Server</name>
+    <description>Mock and Proxy HTTP Server for testing purposes. Forked from
+        https://github.com/jharlap/mock-http-server
+    </description>
+    <url>https://github.com/kristofa/mock-http-server</url>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git@github.com:kristofa/mock-http-server.git</connection>
+        <url>git@github.com:kristofa/mock-http-server.git</url>
+        <developerConnection>scm:git:git@github.com:kristofa/mock-http-server.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>kristofa</id>
+            <name>Kristof Adriaenssens</name>
+            <email>kr_adr@yahoo.co.uk</email>
+        </developer>
+    </developers>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.simpleframework</groupId>
+            <artifactId>simple</artifactId>
+            <version>4.1.21</version>
         </dependency>
         <dependency>
-           <groupId>org.slf4j</groupId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.4</version>
         </dependency>
@@ -69,15 +72,15 @@
             <artifactId>mockito-core</artifactId>
             <version>1.8.5</version>
             <scope>test</scope>
-        </dependency> 
-		
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.2.5</version>
-		</dependency>
-	</dependencies>
-	<build>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2.5</version>
+        </dependency>
+    </dependencies>
+    <build>
         <resources>
             <resource>
                 <filtering>false</filtering>
@@ -107,10 +110,10 @@
             </testResource>
             <testResource>
                 <filtering>false</filtering>
-                <directory>src/test/resources</directory>               
+                <directory>src/test/resources</directory>
             </testResource>
         </testResources>
-        
+
         <plugins>
             <plugin>
                 <inherited>true</inherited>
@@ -156,6 +159,9 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

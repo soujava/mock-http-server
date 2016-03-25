@@ -25,7 +25,7 @@ import com.github.kristofa.test.http.file.HttpRequestResponseFileLoggerFactory;
  * Integration test that shows the usage of {@link MockAndProxyFacade}. </p> It first executes some requests after starting
  * {@link MockAndProxyFacade} in {@link Mode#LOGGING} mode. The requests will get logged to disk. Next it executes the same
  * requests but in {@link Mode#MOCKING} mode so the earlier persisted responses will be returned.
- * <p/>
+ * <p>
  * It also assures the integration between {@link MockHttpServer} and {@link LoggingHttpProxy}.
  * 
  * @author kristof

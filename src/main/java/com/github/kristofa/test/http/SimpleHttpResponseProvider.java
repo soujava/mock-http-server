@@ -9,7 +9,7 @@ import org.apache.http.client.utils.URLEncodedUtils;
 /**
  * {@link HttpResponseProvider} that keeps expected request/responses in memory. Its purpose is to match simple requests that
  * can be easily programmatically defined in code. It supports matching:
- * <p/>
+ * <p>
  * <ul>
  * <li>HTTP Method (GET, PUT, POST, DELETE)</li>
  * <li>Path (including query parmeters)</li>

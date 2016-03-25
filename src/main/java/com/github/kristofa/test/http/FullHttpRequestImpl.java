@@ -14,14 +14,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * <li>method: HTTP method (GET, PUT, POST, DELETE, HEAD, ...).
  * <li>contentType: Content type of the message body. Content of Content-Type header.
  * <li>content: Message body.
- * <li>domain: host name part of url. For example in following example:
- * http://localhost:8081/persons?name=Smith&gender=female host name is localhost
- * <li>port: port part of url. For example in following example: http://localhost:8081/persons?name=Smith&gender=female port
- * is 8081
- * <li>path: Path part of url. For example in following example: http://localhost:8081/persons?name=Smith&gender=female path
- * part is /persons
- * <li>query parameters: query parameters part of url. For example in following example:
- * http://localhost:8081/persons?name=Smith&gender=female query parameters are name=Smith, gender=female.
+ * <li>domain: host name part of url. For example in following example: http://localhost:8081/persons?name=Smith&gender=female host name is localhost,
+ * <li>port: port part of url. For example in following example: http://localhost:8081/persons?name=Smith&gender=female port is 8081,
+ * <li>path: Path part of url. For example in following example: http://localhost:8081/persons?name=Smith&gender=female path part is /persons,
+ * <li>query parameters: query parameters part of url. For example in following example: http://localhost:8081/persons?name=Smith&gender=female query parameters are name=Smith, gender=female.
  * </ul>
  * 
  * @author kristof

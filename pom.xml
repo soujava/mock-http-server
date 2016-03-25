@@ -38,6 +38,7 @@
     </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <testng.version>6.8.5</testng.version>
     </properties>
 
     <dependencies>
@@ -79,6 +80,14 @@
             <artifactId>httpclient</artifactId>
             <version>4.2.5</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
     <build>
         <resources>

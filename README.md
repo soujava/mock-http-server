@@ -89,6 +89,63 @@ There are also other solutions to this problem which might be a better fit to yo
       }
 
 
+With TestNG:
+
+Make use of the com.github.kristofa.test.http.BaseMockTestNG.java
+
+```
+public abstract class BaseMockTestNG {
+
+    protected static final String UTF_8 = "UTF-8";
+    protected static MockHttpServer server;
+    protected static SimpleHttpResponseProvider responseProvider;
+    protected HttpClient client;
+    protected static String baseUrl;
+
+    @BeforeClass
+    public void beforeSuite() throws IOException {
+        responseProvider = new SimpleHttpResponseProvider();
+        server = new MockHttpServer(0, responseProvider);
+        final int port = server.start();
+        assertTrue(port != -1);
+        baseUrl = "http://localhost:" + server.getPort();
+    }
+
+    @AfterClass
+    public void afterSuite() throws IOException {
+        server.stop();
+    }
+
+    @BeforeMethod
+    public void beforeClass() throws Exception {
+        client = new DefaultHttpClient();
+        responseProvider.reset();
+    }
+}
+```
+
+And use it in any test method:
+
+```
+    @Test
+    public void testShouldHandleGetRequests() throws IOException {
+        // Given a mock server configured to respond to a GET / with "OK"
+        responseProvider.expect(Method.GET, "/").respondWith(200, "text/plain", "OK");
+
+        // When a request for GET / arrives
+        final HttpGet req = new HttpGet(baseUrl + "/");
+        final HttpResponse response = client.execute(req);
+        final String responseBody = IOUtils.toString(response.getEntity().getContent());
+        final int statusCode = response.getStatusLine().getStatusCode();
+
+        // Then the response is "OK"
+        Assert.assertEquals("OK", responseBody);
+
+        // And the status code is 200
+        Assert.assertEquals(200, statusCode);
+    }
+```
+
 When creating an instance of MockHttpServer you have to provide a port and a `HttpResponseProvider`
 instance. The `HttpResponseProvider` is the one being configured with request/responses.
  
